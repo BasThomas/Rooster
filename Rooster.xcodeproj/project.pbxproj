@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493BAAE81A9C70700036A252 /* WatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */; };
+		493BAAE91A9C709E0036A252 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95644FE11A8801290071ED8B /* Request.swift */; };
+		493BAAEA1A9C71300036A252 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95644FE31A88199F0071ED8B /* Course.swift */; };
+		49C7F1A01A8E091700BB93F3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7F19F1A8E091700BB93F3 /* InterfaceController.swift */; };
+		49C7F1A21A8E091700BB93F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C7F1A11A8E091700BB93F3 /* Images.xcassets */; };
+		49C7F1A61A8E091700BB93F3 /* Rooster WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 49C7F1A51A8E091700BB93F3 /* Rooster WatchKit App.app */; };
+		49C7F1AE1A8E091700BB93F3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C7F1AC1A8E091700BB93F3 /* Interface.storyboard */; };
+		49C7F1B01A8E091700BB93F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C7F1AF1A8E091700BB93F3 /* Images.xcassets */; };
+		49C7F1B31A8E091700BB93F3 /* Rooster WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49C7F19B1A8E091700BB93F3 /* Rooster WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49F64B831A8E0C1B00CE3F24 /* WatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */; };
 		95644FBE1A87FBAB0071ED8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95644FBD1A87FBAB0071ED8B /* AppDelegate.swift */; };
 		95644FC01A87FBAB0071ED8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95644FBF1A87FBAB0071ED8B /* ViewController.swift */; };
 		95644FC31A87FBAB0071ED8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95644FC11A87FBAB0071ED8B /* Main.storyboard */; };
@@ -22,6 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		49C7F1A71A8E091700BB93F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95644FB01A87FBAB0071ED8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49C7F1A41A8E091700BB93F3;
+			remoteInfo = "Rooster WatchKit App";
+		};
+		49C7F1B11A8E091700BB93F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95644FB01A87FBAB0071ED8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49C7F19A1A8E091700BB93F3;
+			remoteInfo = "Rooster WatchKit Extension";
+		};
 		95644FCE1A87FBAB0071ED8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95644FB01A87FBAB0071ED8B /* Project object */;
@@ -31,7 +55,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		497E498A1A8DFF6C000610F5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49C7F1B31A8E091700BB93F3 /* Rooster WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		49C7F19B1A8E091700BB93F3 /* Rooster WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Rooster WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C7F19E1A8E091700BB93F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C7F19F1A8E091700BB93F3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		49C7F1A11A8E091700BB93F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		49C7F1A51A8E091700BB93F3 /* Rooster WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rooster WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C7F1AB1A8E091700BB93F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C7F1AD1A8E091700BB93F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		49C7F1AF1A8E091700BB93F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchTableViewController.swift; sourceTree = "<group>"; };
 		95644FB81A87FBAB0071ED8B /* Rooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95644FBC1A87FBAB0071ED8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95644FBD1A87FBAB0071ED8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		49C7F1981A8E091700BB93F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95644FB51A87FBAB0071ED8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,11 +122,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49C7F19C1A8E091700BB93F3 /* Rooster WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				49C7F19F1A8E091700BB93F3 /* InterfaceController.swift */,
+				49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */,
+				49C7F1A11A8E091700BB93F3 /* Images.xcassets */,
+				49C7F19D1A8E091700BB93F3 /* Supporting Files */,
+			);
+			path = "Rooster WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		49C7F19D1A8E091700BB93F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49C7F19E1A8E091700BB93F3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49C7F1A91A8E091700BB93F3 /* Rooster WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				49C7F1AC1A8E091700BB93F3 /* Interface.storyboard */,
+				49C7F1AF1A8E091700BB93F3 /* Images.xcassets */,
+				49C7F1AA1A8E091700BB93F3 /* Supporting Files */,
+			);
+			path = "Rooster WatchKit App";
+			sourceTree = "<group>";
+		};
+		49C7F1AA1A8E091700BB93F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49C7F1AB1A8E091700BB93F3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		95644FAF1A87FBAB0071ED8B = {
 			isa = PBXGroup;
 			children = (
 				95644FBA1A87FBAB0071ED8B /* Rooster */,
 				95644FD01A87FBAB0071ED8B /* RoosterTests */,
+				49C7F19C1A8E091700BB93F3 /* Rooster WatchKit Extension */,
+				49C7F1A91A8E091700BB93F3 /* Rooster WatchKit App */,
 				95644FB91A87FBAB0071ED8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +175,8 @@
 			children = (
 				95644FB81A87FBAB0071ED8B /* Rooster.app */,
 				95644FCD1A87FBAB0071ED8B /* RoosterTests.xctest */,
+				49C7F19B1A8E091700BB93F3 /* Rooster WatchKit Extension.appex */,
+				49C7F1A51A8E091700BB93F3 /* Rooster WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +244,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		49C7F19A1A8E091700BB93F3 /* Rooster WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49C7F1B91A8E091700BB93F3 /* Build configuration list for PBXNativeTarget "Rooster WatchKit Extension" */;
+			buildPhases = (
+				49C7F1971A8E091700BB93F3 /* Sources */,
+				49C7F1981A8E091700BB93F3 /* Frameworks */,
+				49C7F1991A8E091700BB93F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49C7F1A81A8E091700BB93F3 /* PBXTargetDependency */,
+			);
+			name = "Rooster WatchKit Extension";
+			productName = "Rooster WatchKit Extension";
+			productReference = 49C7F19B1A8E091700BB93F3 /* Rooster WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		49C7F1A41A8E091700BB93F3 /* Rooster WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49C7F1B81A8E091700BB93F3 /* Build configuration list for PBXNativeTarget "Rooster WatchKit App" */;
+			buildPhases = (
+				49C7F1A31A8E091700BB93F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rooster WatchKit App";
+			productName = "Rooster WatchKit App";
+			productReference = 49C7F1A51A8E091700BB93F3 /* Rooster WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		95644FB71A87FBAB0071ED8B /* Rooster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95644FD71A87FBAB0071ED8B /* Build configuration list for PBXNativeTarget "Rooster" */;
@@ -156,10 +284,12 @@
 				95644FB41A87FBAB0071ED8B /* Sources */,
 				95644FB51A87FBAB0071ED8B /* Frameworks */,
 				95644FB61A87FBAB0071ED8B /* Resources */,
+				497E498A1A8DFF6C000610F5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49C7F1B21A8E091700BB93F3 /* PBXTargetDependency */,
 			);
 			name = Rooster;
 			productName = Rooster;
@@ -193,6 +323,13 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Bas Broek";
 				TargetAttributes = {
+					49C7F19A1A8E091700BB93F3 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = ATRP3CTWEB;
+					};
+					49C7F1A41A8E091700BB93F3 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					95644FB71A87FBAB0071ED8B = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = ATRP3CTWEB;
@@ -218,11 +355,31 @@
 			targets = (
 				95644FB71A87FBAB0071ED8B /* Rooster */,
 				95644FCC1A87FBAB0071ED8B /* RoosterTests */,
+				49C7F19A1A8E091700BB93F3 /* Rooster WatchKit Extension */,
+				49C7F1A41A8E091700BB93F3 /* Rooster WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		49C7F1991A8E091700BB93F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C7F1A21A8E091700BB93F3 /* Images.xcassets in Resources */,
+				49C7F1A61A8E091700BB93F3 /* Rooster WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49C7F1A31A8E091700BB93F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C7F1AE1A8E091700BB93F3 /* Interface.storyboard in Resources */,
+				49C7F1B01A8E091700BB93F3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95644FB61A87FBAB0071ED8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +400,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		49C7F1971A8E091700BB93F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49C7F1A01A8E091700BB93F3 /* InterfaceController.swift in Sources */,
+				493BAAEA1A9C71300036A252 /* Course.swift in Sources */,
+				493BAAE91A9C709E0036A252 /* Request.swift in Sources */,
+				49F64B831A8E0C1B00CE3F24 /* WatchTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95644FB41A87FBAB0071ED8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +423,7 @@
 				95644FDE1A87FEF60071ED8B /* TableViewController.swift in Sources */,
 				95644FBE1A87FBAB0071ED8B /* AppDelegate.swift in Sources */,
 				95644FEB1A882E200071ED8B /* Locksmith.swift in Sources */,
+				493BAAE81A9C70700036A252 /* WatchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +438,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		49C7F1A81A8E091700BB93F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49C7F1A41A8E091700BB93F3 /* Rooster WatchKit App */;
+			targetProxy = 49C7F1A71A8E091700BB93F3 /* PBXContainerItemProxy */;
+		};
+		49C7F1B21A8E091700BB93F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49C7F19A1A8E091700BB93F3 /* Rooster WatchKit Extension */;
+			targetProxy = 49C7F1B11A8E091700BB93F3 /* PBXContainerItemProxy */;
+		};
 		95644FCF1A87FBAB0071ED8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 95644FB71A87FBAB0071ED8B /* Rooster */;
@@ -277,6 +456,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		49C7F1AC1A8E091700BB93F3 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49C7F1AD1A8E091700BB93F3 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		95644FC11A87FBAB0071ED8B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,6 +483,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		49C7F1B41A8E091700BB93F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Rooster WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		49C7F1B51A8E091700BB93F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = "Rooster WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		49C7F1B61A8E091700BB93F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Rooster_WatchKit_Extension;
+				INFOPLIST_FILE = "Rooster WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		49C7F1B71A8E091700BB93F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IBSC_MODULE = Rooster_WatchKit_Extension;
+				INFOPLIST_FILE = "Rooster WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		95644FD51A87FBAB0071ED8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -380,6 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Rooster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -392,6 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Rooster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,6 +691,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		49C7F1B81A8E091700BB93F3 /* Build configuration list for PBXNativeTarget "Rooster WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49C7F1B61A8E091700BB93F3 /* Debug */,
+				49C7F1B71A8E091700BB93F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49C7F1B91A8E091700BB93F3 /* Build configuration list for PBXNativeTarget "Rooster WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49C7F1B41A8E091700BB93F3 /* Debug */,
+				49C7F1B51A8E091700BB93F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		95644FB31A87FBAB0071ED8B /* Build configuration list for PBXProject "Rooster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -452,6 +725,7 @@
 				95644FD91A87FBAB0071ED8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95644FDA1A87FBAB0071ED8B /* Build configuration list for PBXNativeTarget "RoosterTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +734,7 @@
 				95644FDC1A87FBAB0071ED8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

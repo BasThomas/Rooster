@@ -168,7 +168,7 @@ class TableViewController: UITableViewController, RequestDelegate
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as TableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as! TableViewCell
 
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat = "HH:mm"
@@ -179,12 +179,13 @@ class TableViewController: UITableViewController, RequestDelegate
 		cell.fromTime.text = dateFormatter.stringFromDate(course.begin)
 		cell.toTime.text = dateFormatter.stringFromDate(course.end)
 		
-		dateFormatter.dateFormat = "yyyy-MM-dd"
+		//dateFormatter.dateFormat = "yyyy-MM-dd"
+		dateFormatter.dateFormat = "EEEE"
 		
 		cell.course.text = course.subject
 		cell.room.text = course.room
-		cell.teacher.text = course.teacher
-		//cell.teacher.text = dateFormatter.stringFromDate(course.day)
+		//cell.teacher.text = course.teacher
+		cell.teacher.text = dateFormatter.stringFromDate(course.day)
 
         return cell
     }

@@ -27,6 +27,9 @@ class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
         self.password.delegate = self
         
         self.login.enabled = true
+		
+		self.username.text = "i306880"
+		self.password.text = "bdf-Crf-cGV-Q4h"
     }
     
     override func viewDidLoad()
@@ -77,7 +80,7 @@ class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
     
     @IBAction func login(sender: AnyObject)
     {
-        var req = Request(delegate: self, username: self.username.text, password: self.password.text)
+        let req = Request(delegate: self, username: self.username.text, password: self.password.text)
         
         req.get(request: "Schedule/me")
 		
@@ -87,9 +90,9 @@ class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
-        let navigationController = segue.destinationViewController as UINavigationController
+        let navigationController = segue.destinationViewController as! UINavigationController
         
-        let dvc = navigationController.topViewController as TableViewController
+        let dvc = navigationController.topViewController as! TableViewController
         dvc.json = self.json
     }
 }

@@ -29,7 +29,7 @@ class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
         self.login.enabled = true
 		
 		self.username.text = "i306880"
-		self.password.text = "bdf-Crf-cGV-Q4h"
+		self.password.text = ""
     }
     
     override func viewDidLoad()

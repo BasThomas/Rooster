@@ -8,19 +8,19 @@
 
 import UIKit
 
-class Course
+public class Course
 {
-	var begin: NSDate!
-	var oBegin: String!
-	var end: NSDate!
-	var oEnd: String!
-	var day: NSDate!
-	var room: String!
-	var subject: String!
-	var teacher: String!
-	var description: String!
+	public var begin: NSDate!
+	public var oBegin: String!
+	public var end: NSDate!
+	public var oEnd: String!
+	public var day: NSDate!
+	public var room: String!
+	public var subject: String!
+	public var teacher: String!
+	public var description: String!
 	
-	init(begin: String, end: String, room: String, subject: String, teacher: String, description: String)
+	public init(begin: String, end: String, room: String, subject: String, teacher: String, description: String)
 	{
 		self.oBegin = begin
 		self.oEnd = end

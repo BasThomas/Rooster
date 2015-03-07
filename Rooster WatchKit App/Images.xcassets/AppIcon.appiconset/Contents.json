@@ -33,18 +33,9 @@
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "scale" : "2x",
-      "filename" : "1423462460_calendar-128 copy-1-1-4.png",
+      "filename" : "1423462460_calendar-128 copy-1-1-4-1.png",
       "role" : "appLauncher",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "44x44",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "filename" : "1423462460_calendar-128 copy-1-1-5.png",
-      "role" : "appLauncher",
-      "subtype" : "42mm"
+      "scale" : "2x"
     },
     {
       "size" : "86x86",
@@ -60,6 +51,23 @@
       "scale" : "2x",
       "filename" : "1423462460_calendar-128 copy-1-1-7.png",
       "role" : "quickLook",
+      "subtype" : "42mm"
+    },
+    {
+      "role" : "appLauncher",
+      "size" : "40x40",
+      "idiom" : "watch",
+      "filename" : "1423462460_calendar-128 copy-1-1-4.png",
+      "subtype" : "38mm",
+      "unassigned" : true,
+      "scale" : "2x"
+    },
+    {
+      "scale" : "2x",
+      "idiom" : "watch",
+      "filename" : "1423462460_calendar-128 copy-1-1-5.png",
+      "unassigned" : true,
+      "role" : "appLauncher",
       "subtype" : "42mm"
     }
   ],

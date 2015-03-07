@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol RequestDelegate
+public protocol RequestDelegate
 {
     // Handles the JSON.
     func handleJSON(json: NSDictionary, forRequest request: String)
@@ -16,14 +16,14 @@ protocol RequestDelegate
 	func handleError(error: NSError)
 }
 
-class Request
+public class Request
 {
     var delegate: RequestDelegate!
     var baseString: String!
     let username: String
     let password: String
     
-    init(delegate: RequestDelegate, username: String, password: String)
+    public init(delegate: RequestDelegate, username: String, password: String)
     {
         self.delegate = delegate
         self.baseString = "https://apps.fhict.nl/api/v1/"
@@ -32,7 +32,7 @@ class Request
         self.password = password
     }
     
-    func get(request requestString: String)
+    public func get(request requestString: String)
     {
         let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -88,7 +88,7 @@ class Request
         task.resume()
     }
     
-    func stringFromQueryParameters(queryParameters : Dictionary<String, String>) -> String
+    private func stringFromQueryParameters(queryParameters : Dictionary<String, String>) -> String
     {
         var parts: [String] = []
         for (name, value) in queryParameters
@@ -102,7 +102,7 @@ class Request
         return "&".join(parts)
     }
     
-    func NSURLByAppendingQueryParameters(URL : NSURL!, queryParameters : Dictionary<String, String>) -> NSURL
+    private func NSURLByAppendingQueryParameters(URL : NSURL!, queryParameters : Dictionary<String, String>) -> NSURL
     {
         let URLString : NSString = NSString(format: "%@?%@", URL.absoluteString!, self.stringFromQueryParameters(queryParameters))
         

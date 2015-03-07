@@ -1,25 +1,26 @@
 //
-//  InterfaceController.swift
-//  Rooster WatchKit Extension
+//  GlanceController.swift
+//  Rooster
 //
-//  Created by Bas on 13/02/2015.
+//  Created by Bas on 07/03/2015.
 //  Copyright (c) 2015 Bas Broek. All rights reserved.
 //
 
 import WatchKit
 import RoosterKit
 
-class InterfaceController: WKInterfaceController, RequestDelegate
+class GlanceController: WKInterfaceController, RequestDelegate
 {
-	@IBOutlet weak var courseTable: WKInterfaceTable!
+	@IBOutlet weak var timeLabel: WKInterfaceLabel!
+	@IBOutlet weak var courseLabel: WKInterfaceLabel!
 	
 	var courses = [Course]()
 	
-    override func awakeWithContext(context: AnyObject?)
+	override func awakeWithContext(context: AnyObject?)
 	{
-        super.awakeWithContext(context)
-        
-        // Configure interface objects here.
+		super.awakeWithContext(context)
+		
+		// Configure interface objects here.
 		
 		let req = Request(delegate: self, username: "", password: "")
 		
@@ -41,7 +42,7 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 			println(error?.localizedDescription)
 			let resetError = Locksmith.deleteDataForUserAccount("user")
 		}
-    }
+	}
 	
 	// MARK: - RequestDelegate methods
 	func handleJSON(json: NSDictionary, forRequest request: String)
@@ -135,9 +136,9 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 					}
 				}
 			}
+			
+			self.setupGlance()
 		}
-		
-		self.loadTableData()
 	}
 	
 	func handleError(error: NSError)
@@ -150,28 +151,48 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 		//
 	}
 	
-	func loadTableData()
+	func setupGlance()
 	{
-		self.courseTable.setNumberOfRows(self.courses.count, withRowType: "default")
+		let earliest = RoosterKit().getEarliestDates(self.courses)
 		
-		for (index, course) in enumerate(self.courses)
+		var timeLabelText: String?
+		var courseLabelText: String?
+		
+		if let courses = earliest
 		{
-			let row = self.courseTable.rowControllerAtIndex(index) as! WatchTableViewController
+			let timeZone = NSTimeZone(abbreviation: "GMT+0:00")
 			
-			row.courseLabel.setText(self.courses[index].subject)
-			row.roomLabel.setText(self.courses[index].room)
+			let timeFormatter = NSDateFormatter()
+			timeFormatter.dateFormat = "HH:mm"
+			timeFormatter.timeZone = timeZone
+			
+			let dayFormatter = NSDateFormatter()
+			dayFormatter.dateFormat = "EEE"
+			dayFormatter.timeZone = timeZone
+			
+			for course in courses
+			{
+				if (course.begin.isToday())
+				{
+					timeLabelText = timeFormatter.stringFromDate(course.begin)
+				}
+				else
+				{
+					timeLabelText = "\(dayFormatter.stringFromDate(course.begin)) at \(timeFormatter.stringFromDate(course.begin))"
+				}
+				
+				if courseLabelText == nil
+				{
+					courseLabelText = "\(course.subject) in \(course.room)"
+				}
+				else
+				{
+					courseLabelText! += "\n\(course.subject) in \(course.room)"
+				}
+			}
 		}
+		
+		self.timeLabel.setText(timeLabelText ?? "unknown time")
+		self.courseLabel.setText(courseLabelText ?? "unknown course")
 	}
-
-    override func willActivate()
-	{
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate()
-	{
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
 }

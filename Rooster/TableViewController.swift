@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RoosterKit
 
 class TableViewController: UITableViewController, RequestDelegate
 {

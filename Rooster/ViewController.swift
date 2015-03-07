@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RoosterKit
 
 class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
 {
@@ -16,6 +17,27 @@ class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
 	@IBOutlet weak var error: UILabel!
     
     var json: NSDictionary?
+	
+	required init(coder aDecoder: NSCoder)
+	{
+		super.init(coder: aDecoder)
+		
+		let (dictionary, error) = Locksmith.loadDataForUserAccount("user")
+		
+		if (error == nil)
+		{
+			let username = dictionary!["username"] as? String
+			let password = dictionary!["password"] as? String
+			
+			var req = Request(delegate: self, username: username!, password: password!)
+			req.get(request: "Schedule/me")
+		}
+		else
+		{
+			println(error?.localizedDescription)
+			let resetError = Locksmith.deleteDataForUserAccount("user")
+		}
+	}
     
     override func viewWillAppear(animated: Bool)
     {
@@ -27,9 +49,6 @@ class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
         self.password.delegate = self
         
         self.login.enabled = true
-		
-		self.username.text = "i306880"
-		self.password.text = ""
     }
     
     override func viewDidLoad()
@@ -50,10 +69,32 @@ class ViewController: UIViewController, RequestDelegate, UITextFieldDelegate
         self.username.textColor = .blackColor()
         self.password.textColor = .blackColor()
     }
+	
+	func textFieldShouldReturn(textField: UITextField) -> Bool
+	{
+		self.login("")
+		textField.resignFirstResponder()
+		
+		return true
+	}
     
     // MARK: - Request delegate methods
     func handleJSON(json: NSDictionary, forRequest request: String)
     {
+		/*
+		if let error = json["error"] as? String
+		{
+			println(error)
+			
+			self.errorLabel.text = "Gebruikersnaam of wachtwoord klopt niet."
+			self.errorLabel.hidden = false
+			
+			return
+		}
+		*/
+		
+		let usernameError = Locksmith.saveData(["username": self.username.text, "password": self.password.text], forUserAccount: "user")
+		
         self.json = json
         self.performSegueWithIdentifier("login", sender: self)
     }

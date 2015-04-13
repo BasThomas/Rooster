@@ -52,19 +52,8 @@ public class RoosterKit
 		
 		:returns: Course(s), which is/are the closest to now.
 	*/
-	public func getEarliestDates(courses: [Course]) -> [Course]?
+	public func soonestDates(courses: [Course]) -> [Course]?
 	{
-		if courses.count == 1
-		{
-			if courses.first!.begin.inPast()
-			{
-				// Date is in past
-				return nil
-			}
-			
-			return courses
-		}
-		
 		var earliest: [Course]!
 		
 		for course in courses
@@ -85,12 +74,34 @@ public class RoosterKit
 					earliest = [course]
 				}
 			}
-			else
+			else if (!course.begin.inPast())
 			{
 				earliest = [course]
 			}
 		}
 		
 		return earliest
+	}
+	
+	public func todayCourses(inCourses courses: [Course]) -> [Course]?
+	{
+		var today: [Course]!
+		
+		for course in courses
+		{
+			if (course.begin.isToday())
+			{
+				if today != nil
+				{
+					today.append(course)
+				}
+				else
+				{
+					today = [course]
+				}
+			}
+		}
+		
+		return today
 	}
 }

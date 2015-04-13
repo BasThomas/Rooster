@@ -52,8 +52,6 @@ class TableViewController: UITableViewController, RequestDelegate
         {
             for course in courses
             {
-                println(course)
-                
                 var begin: String!
                 var end: String!
                 var room: String!
@@ -173,7 +171,8 @@ class TableViewController: UITableViewController, RequestDelegate
 
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat = "HH:mm"
-		dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")
+		dateFormatter.timeZone = NSCalendar.currentCalendar().timeZone
+		dateFormatter.locale = NSLocale.currentLocale()
 		
         let course = self.courses[indexPath.row]
         

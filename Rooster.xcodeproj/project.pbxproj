@@ -12,7 +12,7 @@
 		4920F1341AAB3F0B00F7E5DC /* RoosterKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920F1331AAB3F0B00F7E5DC /* RoosterKitTests.swift */; };
 		4920F1371AAB3F0B00F7E5DC /* RoosterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4920F1201AAB3F0B00F7E5DC /* RoosterKit.framework */; };
 		4920F1381AAB3F0B00F7E5DC /* RoosterKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4920F1201AAB3F0B00F7E5DC /* RoosterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		493BAAE81A9C70700036A252 /* WatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */; };
+		493BAAE81A9C70700036A252 /* WatchTableViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F64B821A8E0C1B00CE3F24 /* WatchTableViewRow.swift */; };
 		493EB35F1AAB4DF90029FA89 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EB35D1AAB4DF90029FA89 /* Locksmith.swift */; };
 		493EB3601AAB4DF90029FA89 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EB35E1AAB4DF90029FA89 /* LocksmithRequest.swift */; };
 		49BFB4261AAB3FBB008BBCE4 /* RoosterKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFB4251AAB3FBB008BBCE4 /* RoosterKit.swift */; };
@@ -25,7 +25,8 @@
 		49C7F1AE1A8E091700BB93F3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C7F1AC1A8E091700BB93F3 /* Interface.storyboard */; };
 		49C7F1B01A8E091700BB93F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C7F1AF1A8E091700BB93F3 /* Images.xcassets */; };
 		49C7F1B31A8E091700BB93F3 /* Rooster WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49C7F19B1A8E091700BB93F3 /* Rooster WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		49F64B831A8E0C1B00CE3F24 /* WatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */; };
+		49D9765C1AB07B0400973168 /* ErrorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D9765B1AB07B0400973168 /* ErrorRow.swift */; };
+		49F64B831A8E0C1B00CE3F24 /* WatchTableViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F64B821A8E0C1B00CE3F24 /* WatchTableViewRow.swift */; };
 		95644FBE1A87FBAB0071ED8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95644FBD1A87FBAB0071ED8B /* AppDelegate.swift */; };
 		95644FC01A87FBAB0071ED8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95644FBF1A87FBAB0071ED8B /* ViewController.swift */; };
 		95644FC31A87FBAB0071ED8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95644FC11A87FBAB0071ED8B /* Main.storyboard */; };
@@ -127,7 +128,8 @@
 		49C7F1AB1A8E091700BB93F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C7F1AD1A8E091700BB93F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		49C7F1AF1A8E091700BB93F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchTableViewController.swift; sourceTree = "<group>"; };
+		49D9765B1AB07B0400973168 /* ErrorRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRow.swift; sourceTree = "<group>"; };
+		49F64B821A8E0C1B00CE3F24 /* WatchTableViewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchTableViewRow.swift; sourceTree = "<group>"; };
 		95644FB81A87FBAB0071ED8B /* Rooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95644FBC1A87FBAB0071ED8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95644FBD1A87FBAB0071ED8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,7 +228,8 @@
 			children = (
 				49C7F19F1A8E091700BB93F3 /* InterfaceController.swift */,
 				49BFB42B1AAB4185008BBCE4 /* GlanceController.swift */,
-				49F64B821A8E0C1B00CE3F24 /* WatchTableViewController.swift */,
+				49F64B821A8E0C1B00CE3F24 /* WatchTableViewRow.swift */,
+				49D9765B1AB07B0400973168 /* ErrorRow.swift */,
 				49C7F1A11A8E091700BB93F3 /* Images.xcassets */,
 				49C7F19D1A8E091700BB93F3 /* Supporting Files */,
 			);
@@ -593,8 +596,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C7F1A01A8E091700BB93F3 /* InterfaceController.swift in Sources */,
-				49F64B831A8E0C1B00CE3F24 /* WatchTableViewController.swift in Sources */,
+				49F64B831A8E0C1B00CE3F24 /* WatchTableViewRow.swift in Sources */,
 				49BFB42C1AAB4185008BBCE4 /* GlanceController.swift in Sources */,
+				49D9765C1AB07B0400973168 /* ErrorRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +610,7 @@
 				95644FE01A87FF0B0071ED8B /* TableViewCell.swift in Sources */,
 				95644FDE1A87FEF60071ED8B /* TableViewController.swift in Sources */,
 				95644FBE1A87FBAB0071ED8B /* AppDelegate.swift in Sources */,
-				493BAAE81A9C70700036A252 /* WatchTableViewController.swift in Sources */,
+				493BAAE81A9C70700036A252 /* WatchTableViewRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,7 +820,7 @@
 				);
 				IBSC_MODULE = Rooster_WatchKit_Extension;
 				INFOPLIST_FILE = "Rooster WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -832,7 +836,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				IBSC_MODULE = Rooster_WatchKit_Extension;
 				INFOPLIST_FILE = "Rooster WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

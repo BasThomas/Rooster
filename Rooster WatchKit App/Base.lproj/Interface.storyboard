@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7519.1" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7519.1" systemVersion="14C1510" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
@@ -12,16 +12,45 @@
                     <items>
                         <table alignment="left" id="jQy-xL-401">
                             <items>
-                                <tableRow identifier="default" id="9wy-mX-inG" customClass="WatchTableViewController" customModule="Rooster_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="cgh-P6-olT">
+                                <tableRow identifier="defaultWithTime" id="E8P-4m-BI1" customClass="WatchTableViewRow" customModule="Rooster_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="S9a-xZ-CkG">
                                         <items>
-                                            <label alignment="left" text="Course" id="GRP-H6-kF5"/>
-                                            <label alignment="right" text="Room" id="1EH-w2-aRy"/>
+                                            <group width="0.50000000000000011" alignment="left" layout="vertical" id="K0U-Fz-H68">
+                                                <items>
+                                                    <label alignment="left" text="Course" id="QoP-cZ-kfc">
+                                                        <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                                    </label>
+                                                    <label alignment="left" text="Room" id="LL0-hn-9ZC">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="0.50000000000000011" alignment="left" id="TLd-gU-sHX">
+                                                <items>
+                                                    <label alignment="right" text="Time" textAlignment="right" id="Igv-MH-FE0">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="courseLabel" destination="GRP-H6-kF5" id="SVA-cw-l7f"/>
-                                        <outlet property="roomLabel" destination="1EH-w2-aRy" id="6Hi-SU-JO1"/>
+                                        <outlet property="courseLabel" destination="QoP-cZ-kfc" id="KNS-ZS-OZB"/>
+                                        <outlet property="roomLabel" destination="LL0-hn-9ZC" id="3AS-PV-kZl"/>
+                                        <outlet property="timeLabel" destination="Igv-MH-FE0" id="gwr-Jh-jQX"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="error" id="Ouh-dc-nkV" customClass="ErrorRow" customModule="Rooster_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="Wny-gZ-z5b">
+                                        <items>
+                                            <label alignment="left" text="An error occurred." numberOfLines="0" id="xJk-mS-taX">
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="errorLabel" destination="xJk-mS-taX" id="mjx-XH-NhR"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -38,14 +67,11 @@
             <objects>
                 <glanceController id="amc-G1-Blt" customClass="GlanceController" customModule="Rooster_WatchKit_Extension">
                     <items>
-                        <group alignment="left" layout="vertical" id="PaF-iv-0zW">
+                        <group alignment="left" layout="vertical" id="PaF-iv-0zW"/>
+                        <group alignment="left" layout="vertical" id="Xd7-jc-Kj0">
                             <items>
-                                <label alignment="left" text="Volgende les" id="P2z-iI-Vfg"/>
-                                <label alignment="left" text="Time" id="L3Q-Hc-t8O"/>
-                            </items>
-                        </group>
-                        <group alignment="left" id="Xd7-jc-Kj0">
-                            <items>
+                                <label alignment="left" text="Volgende les" numberOfLines="2" id="P2z-iI-Vfg"/>
+                                <label alignment="left" text="Time" numberOfLines="0" id="L3Q-Hc-t8O"/>
                                 <label alignment="left" text="Course" id="tep-gj-tIw"/>
                             </items>
                         </group>

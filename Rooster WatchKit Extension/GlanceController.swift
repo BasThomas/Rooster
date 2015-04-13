@@ -40,7 +40,7 @@ class GlanceController: WKInterfaceController, RequestDelegate
 		else
 		{
 			println(error?.localizedDescription)
-			let resetError = Locksmith.deleteDataForUserAccount("user")
+			// TODO: Display error to user.
 		}
 	}
 	
@@ -143,32 +143,46 @@ class GlanceController: WKInterfaceController, RequestDelegate
 	
 	func handleError(error: NSError)
 	{
-		//
+		if (error.code == -1009)
+		{
+			self.timeLabel.setTextColor(.redColor())
+			self.timeLabel.setText("Internet offline")
+			
+			self.courseLabel.setHidden(true)
+		}
 	}
 	
 	func invalidAuth()
 	{
-		//
+		self.timeLabel.setTextColor(.redColor())
+		self.timeLabel.setText("Please reauthorize")
+		
+		self.courseLabel.setHidden(true)
 	}
 	
 	func setupGlance()
 	{
-		let earliest = RoosterKit().getEarliestDates(self.courses)
+		self.courseLabel.setHidden(false)
+		
+		let earliest = RoosterKit().soonestDates(self.courses)
 		
 		var timeLabelText: String?
 		var courseLabelText: String?
 		
 		if let courses = earliest
 		{
-			let timeZone = NSTimeZone(abbreviation: "GMT+0:00")
+			let timeZone = NSCalendar.currentCalendar().timeZone
+			let locale = NSLocale.currentLocale()
 			
 			let timeFormatter = NSDateFormatter()
 			timeFormatter.dateFormat = "HH:mm"
 			timeFormatter.timeZone = timeZone
+			timeFormatter.locale = locale
 			
 			let dayFormatter = NSDateFormatter()
 			dayFormatter.dateFormat = "EEE"
 			dayFormatter.timeZone = timeZone
+			dayFormatter.locale = locale
 			
 			for course in courses
 			{

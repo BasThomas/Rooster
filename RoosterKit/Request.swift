@@ -59,30 +59,36 @@ public class Request
         
         /* Start a new Task */
         let task = session.dataTaskWithRequest(request, completionHandler:
-            {
-                (data : NSData!, response : NSURLResponse!, error : NSError!) -> Void in
-                if(error != nil)
-                {
-					println("Request error: \(error.localizedDescription); \(error.code)")
-					
+		{
+			(data : NSData!, response : NSURLResponse!, error : NSError!) -> Void in
+			if(error != nil)
+			{
+				println("Request error: \(error.localizedDescription); \(error.code)")
+				
+				dispatch_async(dispatch_get_main_queue(), {
 					self.delegate.handleError(error)
-                    
-                    return
-                }
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    var error: NSError?
-                    let result = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &error) as? NSDictionary
+				})
+				
+				return
+			}
+			
+			dispatch_async(dispatch_get_main_queue(), {
+				var error: NSError?
+				let result = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: &error) as? NSDictionary
+				
+				if (error != nil)
+				{
+					dispatch_async(dispatch_get_main_queue(), {
+						self.delegate.invalidAuth()
+					})
 					
-                    if (error != nil)
-                    {
-                        self.delegate.invalidAuth()
-                        
-                        return
-                    }
-                    
-                    self.delegate.handleJSON(result!, forRequest: requestString)
-                })
+					return
+				}
+				
+				dispatch_async(dispatch_get_main_queue(), {
+					self.delegate.handleJSON(result!, forRequest: requestString)
+				})
+			})
         })
         
         task.resume()

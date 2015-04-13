@@ -39,7 +39,7 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 		else
 		{
 			println(error?.localizedDescription)
-			let resetError = Locksmith.deleteDataForUserAccount("user")
+			// TODO: Display error to user.
 		}
     }
 	
@@ -142,7 +142,14 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 	
 	func handleError(error: NSError)
 	{
-		//
+		switch (error.code)
+		{
+			case -1009:
+				// Internet offline
+				self.showError("Internet offline")
+			default:
+				self.showError(error.localizedDescription)
+		}
 	}
 	
 	func invalidAuth()
@@ -150,17 +157,53 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 		//
 	}
 	
-	func loadTableData()
+	private func loadTableData()
 	{
-		self.courseTable.setNumberOfRows(self.courses.count, withRowType: "default")
+		let today = RoosterKit().todayCourses(inCourses: self.courses)
 		
-		for (index, course) in enumerate(self.courses)
+		let timeZone = NSCalendar.currentCalendar().timeZone
+		let locale = NSLocale.currentLocale()
+		
+		let timeFormatter = NSDateFormatter()
+		timeFormatter.dateFormat = "HH:mm"
+		timeFormatter.timeZone = timeZone
+		timeFormatter.locale = locale
+		
+		let dayFormatter = NSDateFormatter()
+		dayFormatter.dateFormat = "EEE"
+		dayFormatter.timeZone = timeZone
+		dayFormatter.locale = locale
+		
+		let todayString = dayFormatter.stringFromDate(NSDate())
+		
+		self.setTitle(todayString)
+		
+		if let courses = today
 		{
-			let row = self.courseTable.rowControllerAtIndex(index) as! WatchTableViewController
+			self.courseTable.setNumberOfRows(courses.count, withRowType: "defaultWithTime")
 			
-			row.courseLabel.setText(self.courses[index].subject)
-			row.roomLabel.setText(self.courses[index].room)
+			for (index, course) in enumerate(courses)
+			{
+				let row = self.courseTable.rowControllerAtIndex(index) as! WatchTableViewRow
+				
+				row.courseLabel.setText(courses[index].subject)
+				row.roomLabel.setText(courses[index].room)
+				
+				row.timeLabel.setText(timeFormatter.stringFromDate(courses[index].begin))
+			}
 		}
+		else
+		{
+			self.showError("No courses today")
+		}
+	}
+	
+	private func showError(error: String?)
+	{
+		self.courseTable.setNumberOfRows(1, withRowType: "error")
+		
+		let row = self.courseTable.rowControllerAtIndex(0) as! ErrorRow
+		row.errorLabel.setText(error ?? "An unknown error ocurred.")
 	}
 
     override func willActivate()

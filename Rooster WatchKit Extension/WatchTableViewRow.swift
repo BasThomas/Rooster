@@ -1,5 +1,5 @@
 //
-//  WatchTableViewController.swift
+//  WatchTableViewRow.swift
 //  Rooster
 //
 //  Created by Bas on 13/02/2015.
@@ -8,8 +8,9 @@
 
 import WatchKit
 
-class WatchTableViewController: NSObject
+class WatchTableViewRow: NSObject
 {
 	@IBOutlet weak var courseLabel: WKInterfaceLabel!
 	@IBOutlet weak var roomLabel: WKInterfaceLabel!
+	@IBOutlet weak var timeLabel: WKInterfaceLabel!
 }

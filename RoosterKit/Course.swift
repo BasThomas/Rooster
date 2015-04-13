@@ -27,7 +27,6 @@ public class Course
 		
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-		dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")
 		
 		self.begin = dateFormatter.dateFromString(begin)
 		self.end = dateFormatter.dateFromString(end)

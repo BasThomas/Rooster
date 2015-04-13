@@ -159,7 +159,7 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 	
 	private func loadTableData()
 	{
-		let today = RoosterKit().todayCourses(inCourses: self.courses)
+		let today = RoosterKit.todayCourses(inCourses: self.courses)
 		
 		let timeZone = NSCalendar.currentCalendar().timeZone
 		let locale = NSLocale.currentLocale()
@@ -170,10 +170,11 @@ class InterfaceController: WKInterfaceController, RequestDelegate
 		timeFormatter.locale = locale
 		
 		let dayFormatter = NSDateFormatter()
-		dayFormatter.dateFormat = "EEE"
+		dayFormatter.dateFormat = "EEEE"
 		dayFormatter.timeZone = timeZone
 		dayFormatter.locale = locale
 		
+        // FIXME: Must be date of shown rooster
 		let todayString = dayFormatter.stringFromDate(NSDate())
 		
 		self.setTitle(todayString)

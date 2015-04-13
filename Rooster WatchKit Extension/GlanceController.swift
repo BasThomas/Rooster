@@ -164,7 +164,7 @@ class GlanceController: WKInterfaceController, RequestDelegate
 	{
 		self.courseLabel.setHidden(false)
 		
-		let earliest = RoosterKit().soonestDates(self.courses)
+		let earliest = RoosterKit.soonestDates(self.courses)
 		
 		var timeLabelText: String?
 		var courseLabelText: String?

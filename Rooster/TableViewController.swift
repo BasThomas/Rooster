@@ -156,12 +156,43 @@ class TableViewController: UITableViewController, RequestDelegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         // Return the number of sections.
-        return 1
+        return 5
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "EEEE dd-MM-yyyy"
+        
+        let day = NSDate(timeInterval: Double(24 * 60 * 60 * section), sinceDate: NSDate().roosterMonday())
+        
+        return formatter.stringFromDate(day)
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // Return the number of rows in the section.
+        switch(section)
+        {
+            case 0:
+                return RoosterKit.dayCourses(forDay: .Monday, inCourses: self.courses)?.count ?? 0
+                
+            case 1:
+                return RoosterKit.dayCourses(forDay: .Tuesday, inCourses: self.courses)?.count ?? 0
+                
+            case 2:
+                return RoosterKit.dayCourses(forDay: .Wednesday, inCourses: self.courses)?.count ?? 0
+                
+            case 3:
+                return RoosterKit.dayCourses(forDay: .Thursday, inCourses: self.courses)?.count ?? 0
+                
+            case 4:
+                return RoosterKit.dayCourses(forDay: .Friday, inCourses: self.courses)?.count ?? 0
+                
+            default:
+                println("Something went wrong...")
+        }
+        
         return self.courses.count
     }
     
@@ -173,19 +204,38 @@ class TableViewController: UITableViewController, RequestDelegate
 		dateFormatter.dateFormat = "HH:mm"
 		dateFormatter.timeZone = NSCalendar.currentCalendar().timeZone
 		dateFormatter.locale = NSLocale.currentLocale()
+        
+        var courses = [Course]()
+        
+        switch(indexPath.section)
+        {
+            case 0:
+                courses =  RoosterKit.dayCourses(forDay: .Monday, inCourses: self.courses)!
+                
+            case 1:
+                courses = RoosterKit.dayCourses(forDay: .Tuesday, inCourses: self.courses)!
+                
+            case 2:
+                courses = RoosterKit.dayCourses(forDay: .Wednesday, inCourses: self.courses)!
+                
+            case 3:
+                courses = RoosterKit.dayCourses(forDay: .Thursday, inCourses: self.courses)!
+            
+            case 4:
+                courses = RoosterKit.dayCourses(forDay: .Friday, inCourses: self.courses)!
+                
+            default:
+                println("Something went wrong...")
+        }
 		
-        let course = self.courses[indexPath.row]
+        let course = courses[indexPath.row]
         
 		cell.fromTime.text = dateFormatter.stringFromDate(course.begin)
 		cell.toTime.text = dateFormatter.stringFromDate(course.end)
 		
-		//dateFormatter.dateFormat = "yyyy-MM-dd"
-		dateFormatter.dateFormat = "EEEE"
-		
 		cell.course.text = course.subject
 		cell.room.text = course.room
-		//cell.teacher.text = course.teacher
-		cell.teacher.text = dateFormatter.stringFromDate(course.day)
+		cell.teacher.text = course.teacher
 
         return cell
     }
